@@ -43,6 +43,11 @@
     <!-- Header -->
     <div class="header-wrapper" id="home">
       <section class="hero is-large">
+        <video autoplay muted loop playsinline id="bgvid" class="hero-video">
+          <source src="image/silk.mp4" type="video/mp4">
+          <!-- Fallback image if video doesn't load -->
+          <!-- The poster attribute handles the fallback image -->
+        </video>
         <nav class="navbar is-transparent is-hidden-desktop">
           <div class="navbar-brand is-fixed-top">
             <div class="navbar-burger burger" data-target="mobile-nav">
@@ -60,6 +65,14 @@
         </nav>
         <div class="hero-body">
           <div class="container has-text-centered">
+            <button id="music-btn" class="music-toggle">
+              <i class="fa-solid fa-music"></i>
+            </button>
+
+            <audio id="bg-music" loop>
+              <source src="image/song.mp3" type="audio/mpeg">
+            </audio>
+
             <h1 class="subtitle">Նշանադրության հրավեր</h1>
             <h2 class="title">Դավիթ &amp; Մանե</h2>
             <h1 class="subtitle">Սիրով հրավիրում ենք Ձեզ կիսելու մեր կյանքի ամենաջերմ և կարևոր պահերից մեկը 💍</h1>
@@ -258,7 +271,7 @@
             <div class="column is-12 introduction has-text-centered" data-aos="fade-up">
               <p class="h2 subtitle">
                 Ցանկացած հարցի կամ մանրամասի համար կարող եք կապ հաստատել մեզ հետ<br>
-                Միշտ ուրախ կլինենք լսել Ձեզ 🤍
+                Միշտ ուրախ կլինենք լսել Ձեզ 🤎 
               </p>
               <div class="contact-icons">
                 <div class="contact-person">
@@ -278,7 +291,7 @@
               </div>
               <div class="space40px"></div>
               <p class="h2 subtitle" data-aos="fade-up">
-                Սիրով Սպասում ենք 🤍<br>
+                Սիրով Սպասում ենք 🤎<br>
               </p>
             </div>
           </div>
@@ -359,5 +372,53 @@
         });
       })();
     </script>
+
+    <script>
+      const music = document.getElementById("bg-music");
+      const btn = document.getElementById("music-btn");
+      const icon = btn.querySelector("i");
+
+      let isPlaying = false;
+      let hasStarted = false;
+
+      // 🎵 unified start function
+      function startMusic() {
+        if (hasStarted) return;
+
+        music.play().then(() => {
+          isPlaying = true;
+          hasStarted = true;
+
+          icon.classList.remove("fa-music");
+          icon.classList.add("fa-pause");
+        }).catch(() => {
+          // autoplay blocked until real interaction
+        });
+      }
+
+      // 🎯 button toggle (always works)
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation(); // prevents double-trigger from document click
+
+        if (!isPlaying) {
+          music.play();
+          icon.classList.remove("fa-music");
+          icon.classList.add("fa-pause");
+        } else {
+          music.pause();
+          icon.classList.remove("fa-pause");
+          icon.classList.add("fa-music");
+        }
+
+        isPlaying = !isPlaying;
+        hasStarted = true;
+      });
+
+      // 🖱️ start on ANY click
+      document.addEventListener("click", startMusic, { once: true });
+
+      // 📜 start on scroll (first scroll only)
+      document.addEventListener("scroll", startMusic, { once: true });
+      </script>
   </body>
 </html>
