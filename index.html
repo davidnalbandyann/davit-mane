@@ -381,7 +381,6 @@
       let isPlaying = false;
       let hasStarted = false;
 
-      // 🎵 unified start function
       function startMusic() {
         if (hasStarted) return;
 
@@ -389,36 +388,46 @@
           isPlaying = true;
           hasStarted = true;
 
-          icon.classList.remove("fa-music");
-          icon.classList.add("fa-pause");
-        }).catch(() => {
-          // autoplay blocked until real interaction
-        });
+          icon.classList.replace("fa-music", "fa-pause");
+          btn.classList.add("playing");
+
+          removeAutoListeners();
+        }).catch(() => {});
       }
 
-      // 🎯 button toggle (always works)
+      // 🧹 remove listeners after first trigger
+      function removeAutoListeners() {
+        document.removeEventListener("click", startMusic);
+        document.removeEventListener("wheel", startMusic);
+        document.removeEventListener("scroll", startMusic);
+        document.removeEventListener("touchstart", startMusic);
+        document.removeEventListener("keydown", startMusic);
+      }
+
+      // 🎯 button toggle
       btn.addEventListener("click", (e) => {
-        e.stopPropagation(); // prevents double-trigger from document click
+        e.stopPropagation();
 
         if (!isPlaying) {
           music.play();
-          icon.classList.remove("fa-music");
-          icon.classList.add("fa-pause");
+          icon.classList.replace("fa-music", "fa-pause");
+          btn.classList.add("playing");
         } else {
           music.pause();
-          icon.classList.remove("fa-pause");
-          icon.classList.add("fa-music");
+          icon.classList.replace("fa-pause", "fa-music");
+          btn.classList.remove("playing");
         }
 
         isPlaying = !isPlaying;
         hasStarted = true;
       });
 
-      // 🖱️ start on ANY click
-      document.addEventListener("click", startMusic, { once: true });
-
-      // 📜 start on scroll (first scroll only)
-      document.addEventListener("scroll", startMusic, { once: true });
+      // ✅ ALL possible user gestures
+      document.addEventListener("click", startMusic);      // mouse click
+      document.addEventListener("wheel", startMusic);      // desktop scroll (IMPORTANT)
+      document.addEventListener("scroll", startMusic);     // fallback
+      document.addEventListener("touchstart", startMusic); // mobile
+      document.addEventListener("keydown", startMusic);    // keyboard users
       </script>
   </body>
 </html>

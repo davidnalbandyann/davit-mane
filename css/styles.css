@@ -1000,3 +1000,31 @@ h1, h2, h3, .section-title {
   background: rgba(66, 66, 66, 0.3);
   transform: scale(1.05);
 }
+
+.music-toggle {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(66, 66, 66, 0.7) 40%, rgba(66, 66, 66, 1) 100%);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* spinning animation */
+.music-toggle.playing {
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
