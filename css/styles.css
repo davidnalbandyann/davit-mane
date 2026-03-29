@@ -1028,3 +1028,10 @@ h1, h2, h3, .section-title {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+@media screen and (min-width: 769px), print {
+    .hero.is-large .hero-body {
+        padding-bottom: 8rem;
+        padding-top: 8rem;
+    }
+}
