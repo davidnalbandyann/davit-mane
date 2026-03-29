@@ -1,6 +1,7 @@
 /* ========== GREEN THEME ========== */
 /* Primary green: #2E7D32 | Accent: #4CAF50 | Light: #E8F5E9 | Darker: #C8E6C9 */
 @import url("https://fonts.googleapis.com/css?family=Lato|Raleway|Rouge+Script");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&display=swap');
 
 .has-vertically-aligned-content {
   display: flex;
@@ -13,9 +14,41 @@
 }
 
 html {
-  font-family: 'Raleway', Tahoma, sans-serif;
+  font-family: 'Inter', sans-serif;
   width: 100%;
   min-height: 100%;
+}
+
+h1, h2, h3, .section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.hero .title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 5rem;
+}
+
+.full-name {
+  font-family: 'Great Vibes', cursive;
+  font-size: 4rem;
+  color: #2E7D32;
+}
+
+.subtitle, .bodytext, .place, .time {
+  font-family: 'Inter', sans-serif;
+}
+
+.hero .title {
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.section-title {
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .header-wrapper {
@@ -40,11 +73,9 @@ html {
   background-size: cover;
   color: white;
   box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  font-family: 'Raleway', sans-serif;
 }
 
 .hero .title {
-  font-family: 'Rouge Script', sans-serif;
   font-weight: 700;
   transform: rotate(-2deg);
   font-size: 5rem;
@@ -118,7 +149,6 @@ html {
 .main-content {
   padding-top: 2rem;
   color: #1B3B1A;
-  font-family: 'Raleway', sans-serif;
 }
 
 .main-content .section-dark {
@@ -252,7 +282,6 @@ html {
   height: 50px;
   font-size: 1.1rem;
   text-transform: uppercase;
-  font-family: 'Raleway', sans-serif;
 }
 
 @media (max-width: 599px) {
@@ -278,7 +307,6 @@ html {
 }
 
 .main-content .section-title {
-  font-family: 'Raleway', sans-serif;
   font-weight: 900;
   color: #2E7D32;
   text-transform: uppercase;
@@ -288,7 +316,6 @@ html {
 }
 
 .full-name {
-  font-family: 'Rouge Script', sans-serif;
   color: #2E7D32;
   font-size: 3.5rem;
   letter-spacing: 0px;
@@ -298,7 +325,6 @@ html {
 
 .ampersand {
   font-size: 5rem;
-  font-family: 'Rouge Script', sans-serif;
   color: #2E7D32;
   line-height: 5rem;
   display: inline-block;
@@ -311,19 +337,16 @@ html {
 
 .time {
   font-size: 1.4rem;
-  font-family: 'Raleway', sans-serif;
 }
 
 .day-number {
   font-size: 5rem;
-  font-family: 'Raleway', sans-serif;
   font-weight: 900;
   line-height: 1;
 }
 
 .place {
   font-size: 1.4rem;
-  font-family: 'Raleway', sans-serif;
   margin-bottom: 50px;
 }
 
@@ -590,14 +613,12 @@ html {
 
 .title-photo {
   font-size: 18pt;
-  font-family: 'Lato', sans-serif;
   font-weight: 700;
   text-align: left;
   color: white;
 }
 
 .subtitle-photo {
-  font-family: 'Lato', sans-serif;
   font-weight: 700;
   font-size: 14pt;
   font-weight: 600;
