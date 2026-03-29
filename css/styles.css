@@ -735,3 +735,94 @@ body.preloader-site {
 .venue-socials a:hover {
   transform: scale(1.2);
 }
+
+/* Force proper scrollable height on mobile */
+html, body {
+  min-height: 100%;
+  height: auto !important;
+  overflow: auto !important;
+  position: static !important;
+}
+
+.section-dark, .section-darker, .section-light {
+  overflow: visible !important;
+  clear: both;
+}
+
+.section-dark.contact {
+  padding-bottom: 25vh !important;  
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    background-attachment: scroll !important;
+  }
+}
+
+html, body {
+  overflow: auto !important;
+  height: auto !important;
+  position: static !important;
+}
+
+.preloader-wrapper {
+  pointer-events: none; /* allows scrolling if removal is delayed */
+}
+/* Responsive scroll-to-top button - not tied to pixels */
+#toTop {
+  display: none;
+  position: fixed;
+  bottom: 5vh;
+  right: 5vw;
+  z-index: 999;
+  border: none;
+  outline: none;
+  background-color: #2E7D32;
+  color: white;
+  cursor: pointer;
+  border-radius: 50%;
+  width: clamp(44px, 10vw, 56px);
+  height: clamp(44px, 10vw, 56px);
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: all 0.2s ease;
+  opacity: 0.9;
+}
+#toTop:hover {
+  background-color: #4CAF50;
+  transform: scale(1.05);
+  opacity: 1;
+}
+/* Ensure no hidden overflow on mobile */
+.section-dark, .section-darker, .section-light {
+  overflow-x: hidden;
+}
+/* Make sure the last paragraph is reachable */
+.contact {
+  padding-bottom: 15vh !important;
+}
+@media (max-width: 599px) {
+  .main-content .section-dark {
+    padding: 40px 20px;
+  }
+  .contact-icons {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .hero .title {
+    font-size: 3rem;
+  }
+  .hero .subtitle {
+    font-size: 1rem;
+    padding: 20px;
+  }
+  .full-name {
+    font-size: 2.2rem;
+    line-height: 2.5rem;
+  }
+  .ampersand {
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+}
