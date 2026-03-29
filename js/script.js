@@ -55,3 +55,11 @@ $(window).load(function() {
   var Body = $("body");
   Body.addClass("preloader-site");
 });
+
+
+function removePreloader() {
+  const preloader = document.querySelector('.preloader-wrapper');
+  if (preloader) preloader.remove();
+
+  document.body.classList.remove('preloader-site');
+}

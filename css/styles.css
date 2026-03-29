@@ -420,10 +420,6 @@ html {
   background-color: #4CAF50;
 }
 
-body.preloader-site {
-  overflow: hidden;
-}
-
 .preloader-wrapper {
   height: 100%;
   width: 100%;
@@ -736,14 +732,6 @@ body.preloader-site {
   transform: scale(1.2);
 }
 
-/* Force proper scrollable height on mobile */
-html, body {
-  min-height: 100%;
-  height: auto !important;
-  overflow: auto !important;
-  position: static !important;
-}
-
 .section-dark, .section-darker, .section-light {
   overflow: visible !important;
   clear: both;
@@ -758,12 +746,6 @@ html, body {
   .hero {
     background-attachment: scroll !important;
   }
-}
-
-html, body {
-  overflow: auto !important;
-  height: auto !important;
-  position: static !important;
 }
 
 .preloader-wrapper {
