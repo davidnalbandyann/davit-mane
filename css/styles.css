@@ -6,11 +6,6 @@
 :root {
   /* Colors */
   --primary-green: #666;
-  --accent-green: #4CAF50;
-  --light-green-bg: #E8F5E9;
-  --medium-green-bg: #C8E6C9;
-  --darker-green-bg: #A5D6A7;
-  --text-dark-green: #1B3B1A;
   --whitesmoke: #666;
   --white: white;
   --black: black;
@@ -131,6 +126,7 @@ h1, h2, h3, .section-title {
 .full-name {
   font-family: var(--font-family-script);
   font-size: var(--font-size-full-name);
+  font-weight: 600;
   color: var(--primary-green);
 }
 
@@ -230,7 +226,7 @@ h1, h2, h3, .section-title {
 .hero .hero-foot .hero-foot--wrapper .hero-menu-desktop ul li a:hover {
   color: var(--primary-green);
   transition: var(--transition-standard);
-  border-bottom: 2px solid var(--accent-green);
+  border-bottom: 2px solid var(--whitesmoke);
 }
 
 .space40px {
@@ -740,7 +736,8 @@ h1, h2, h3, .section-title {
   list-style: none;
   margin: 20px 0;
   padding: 0;
-  display: block;
+  display: flex;
+  justify-content: center;
   text-align: center;
   color: var(--whitesmoke);
 
@@ -1021,7 +1018,7 @@ h1, h2, h3, .section-title {
 
 /* spinning animation */
 .music-toggle.playing {
-  animation: spin 3s linear infinite;
+  animation: spin 5s linear infinite;
 }
 
 @keyframes spin {
@@ -1034,4 +1031,10 @@ h1, h2, h3, .section-title {
         padding-bottom: 8rem;
         padding-top: 8rem;
     }
+}
+
+@media (max-width: 480px) {
+	.hero-body {
+		padding: 5px;
+	}
 }
