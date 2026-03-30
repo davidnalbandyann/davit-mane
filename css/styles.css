@@ -239,16 +239,14 @@ h1, h2, h3, .section-title {
 
 .main-content {
   padding-top: var(--main-content-padding-top);
-  color: var(--text-dark-green);
+  color: var(--primary-green);
 }
 
 .main-content .section-dark {
-  background-color: var(--light-green-bg);
   padding: var(--section-padding-vertical) var(--section-padding-horizontal);
 }
 
 .main-content .section-darker {
-  background-color: var(--medium-green-bg);
   padding: var(--section-padding-vertical) var(--section-padding-horizontal);
 }
 
@@ -448,7 +446,7 @@ h1, h2, h3, .section-title {
   line-height: 25px;
   text-align: center;
   vertical-align: middle;
-  background: var(--accent-green);
+  background: var(--primary-green);
   color: var(--whitesmoke);
 }
 
@@ -516,7 +514,7 @@ h1, h2, h3, .section-title {
 }
 
 #toTop:hover {
-  background-color: var(--accent-green);
+  background-color: var(--primary-green);
 }
 
 ::-webkit-scrollbar {
@@ -641,9 +639,7 @@ h1, h2, h3, .section-title {
 
 /* Green shades */
 .green-dark { color: var(--primary-green); }
-.green-light { color: var(--accent-green); }
-.green-bg-light { background-color: var(--light-green-bg); }
-.green-bg-medium { background-color: var(--medium-green-bg); }
+.green-light { color: var(--primary-green); }
 
 .tile {
   border-radius: 10px;
@@ -793,7 +789,7 @@ h1, h2, h3, .section-title {
 }
 
 .contact-person a:hover {
-  color: var(--accent-green);
+  color: var(--primary-green);
   transform: scale(1.2);
 }
 
@@ -876,7 +872,7 @@ h1, h2, h3, .section-title {
   opacity: 0.9;
 }
 #toTop:hover {
-  background-color: var(--accent-green);
+  background-color: var(--primary-green);
   transform: scale(1.05);
   opacity: 1;
 }
