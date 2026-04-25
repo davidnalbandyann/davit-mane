@@ -48,7 +48,7 @@ $(document).ready(function($) {
   $(".preloader-wrapper").fadeOut();
   $("body").removeClass("preloader-site");
 });
-$(window).load(function() {
+$(window).on("load", function() {
   var Body = $("body");
   Body.addClass("preloader-site");
 });
@@ -60,3 +60,39 @@ function removePreloader() {
 
   document.body.classList.remove('preloader-site');
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+  var guestSearchInput = document.getElementById("guest-search");
+  var searchStatus = document.getElementById("search-status");
+  var guestItems = Array.prototype.slice.call(document.querySelectorAll(".guest-item"), 0);
+
+  if (!guestSearchInput || !searchStatus || guestItems.length === 0) {
+    return;
+  }
+
+  function updateGuestHighlights() {
+    var query = guestSearchInput.value.trim().toLowerCase();
+    var matches = 0;
+
+    guestItems.forEach(function(item) {
+      var name = item.textContent.toLowerCase();
+      var isMatch = query.length > 0 && name.indexOf(query) !== -1;
+
+      item.classList.toggle("guest-match", isMatch);
+      if (isMatch) {
+        matches += 1;
+      }
+    });
+
+    if (!query) {
+      searchStatus.textContent = "Մուտքագրեք անունը, և կհայտնվեն համընկնումները։";
+      return;
+    }
+
+    searchStatus.textContent = matches > 0
+      ? "Գտնվել է " + matches + " համընկնում"
+      : "Համընկնում չի գտնվել";
+  }
+
+  guestSearchInput.addEventListener("input", updateGuestHighlights);
+});

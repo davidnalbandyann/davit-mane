@@ -884,6 +884,74 @@ h1, h2, h3, .section-title {
 .contact {
   padding-bottom: 15vh !important;
 }
+
+.seating-search {
+  max-width: 560px;
+  margin: 0 auto 30px;
+  text-align: left;
+}
+
+.seating-search-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--primary-green);
+}
+
+#guest-search {
+  border: 2px solid var(--primary-green);
+  border-radius: 10px;
+  box-shadow: none;
+}
+
+#guest-search:focus {
+  border-color: var(--primary-green);
+  box-shadow: 0 0 0 0.15rem rgba(66, 66, 66, 0.2);
+}
+
+.search-status {
+  margin-top: 10px;
+  min-height: 24px;
+}
+
+.seating-grid {
+  margin-top: 10px;
+}
+
+.table-card {
+  border: 1px solid rgba(66, 66, 66, 0.25);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 18px;
+  height: 100%;
+}
+
+.table-card h2 {
+  font-family: var(--font-family-heading);
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  color: var(--primary-green);
+}
+
+.table-card ol {
+  margin: 0;
+  padding-left: 24px;
+}
+
+.table-card li {
+  margin-bottom: 8px;
+  border-radius: 6px;
+  padding: 3px 6px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.guest-match {
+  background-color: #93ad8a !important;
+  color: #1f1a00 !important;
+  font-weight: 700;
+  box-shadow: 0 0 0 2px rgba(255, 223, 134, 0.55);
+}
+
 @media (max-width: 599px) {
   .main-content .section-dark {
     padding: var(--section-padding-mobile);
